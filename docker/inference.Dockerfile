@@ -22,6 +22,9 @@ RUN apt-get update -qq \
     && rm -rf /var/lib/apt/lists/*
 
 # TODO: is r required?
-# conda install -c defaults -c conda-forge  r-base=4.0.3
 
+# conda config --append channels conda-forge
+# conda config --set channel_priority strict
+# conda install mamba
+# mamba install --freeze-installed r-base=4.0.1 r-spatstat
 # TODO: add scripts that run pre-trained models on whole-slide images.
